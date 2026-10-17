@@ -1,0 +1,22 @@
+label=run06_fulldecodeonly boot=236s config=run06_fulldecodeonly.serve.sh
+Run 1: 376ms
+Run 2: 221ms
+Run 3: 221ms
+Run 4: 221ms
+Run 5: 222ms
+Run 1: 100 tokens in 2313ms = 43.23 tok/s
+Run 2: 100 tokens in 2387ms = 41.89 tok/s
+Run 3: 100 tokens in 2221ms = 45.02 tok/s
+Total: 180 tokens in 2558ms = 70.36 tok/s aggregate
+Run 1: 500 tokens in 11141ms = 44.87 tok/s
+Run 2: 500 tokens in 12827ms = 38.98 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      159              36.1             35.7
+      2      189              31.3             57.3
+      4      300              21.2             75.9
+      8      524              15.7            109.5
+Mean acceptance length: 2.21
+Per-position acceptance rate: 0.631, 0.371, 0.204, 
+steady: qwen 83133 MiB, avail 23G
+done

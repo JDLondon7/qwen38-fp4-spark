@@ -1,0 +1,33 @@
+label=run17_blockdrop_off boot=236s config=run17_blockdrop_off.serve.sh
+Run 1: 354ms
+Run 2: 218ms
+Run 3: 218ms
+Run 4: 217ms
+Run 5: 215ms
+Run 1: 100 tokens in 2427ms = 41.20 tok/s
+Run 2: 100 tokens in 2228ms = 44.88 tok/s
+Run 3: 100 tokens in 2107ms = 47.46 tok/s
+Total: 180 tokens in 2663ms = 67.59 tok/s aggregate
+Run 1: 500 tokens in 11488ms = 43.52 tok/s
+Run 2: 500 tokens in 11920ms = 41.94 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      161              40.6             40.1
+      2      183              32.8             59.3
+      4      271              21.5             75.1
+      8      495              15.5            105.0
+Mean acceptance length: 1.97
+Per-position acceptance rate: 0.553, 0.282, 0.138, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       42              40.5             40.5
+      2       84              36.0             65.4
+      4      198              23.0             79.0
+      8      476              15.0            106.2
+Mean acceptance length: 2.62
+Per-position acceptance rate: 0.760, 0.507, 0.349, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7886    2.98           2649
+        32000          31410   13.32           2358
+steady: qwen 82900 MiB, avail 22G
+done

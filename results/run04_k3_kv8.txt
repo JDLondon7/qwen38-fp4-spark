@@ -1,0 +1,23 @@
+label=run04_k3_kv8 boot=231s env: MTP_K=3 SSM= KV=8G COMPILE=default EXTRA=--kv-cache-memory-bytes 8G 
+Run 1: 357ms
+Run 2: 222ms
+Run 3: 217ms
+Run 4: 218ms
+Run 5: 224ms
+Run 1: 100 tokens in 2354ms = 42.48 tok/s
+Run 2: 100 tokens in 2322ms = 43.06 tok/s
+Run 3: 100 tokens in 2073ms = 48.23 tok/s
+Total: 180 tokens in 2754ms = 65.35 tok/s aggregate
+Run 1: 500 tokens in 11186ms = 44.69 tok/s
+Run 2: 500 tokens in 13066ms = 38.26 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       48              37.6             37.6
+      2       96              32.9             60.5
+      4      203              21.1             74.7
+      8      515              14.6            101.2
+Mean acceptance length: 2.38
+Per-position acceptance rate: 0.675, 0.439, 0.266, 
+steady: qwen 83429 MiB, avail 23G
+note: sweep re-run against the same server after the first sweep output was lost to a file swap
+done

@@ -1,0 +1,21 @@
+label=run02_k3 boot=247s env: MTP_K=3 SSM= KV=4G COMPILE=default EXTRA=--kv-cache-memory-bytes 4G 
+Run 1: 294ms
+Run 2: 161ms
+Run 3: 161ms
+Run 4: 225ms
+Run 5: 160ms
+Run 1: 100 tokens in 2365ms = 42.28 tok/s
+Run 2: 100 tokens in 2362ms = 42.33 tok/s
+Run 3: 100 tokens in 2149ms = 46.53 tok/s
+Total: 180 tokens in 2941ms = 61.20 tok/s aggregate
+Run 1: 500 tokens in 11060ms = 45.20 tok/s
+Run 2: 500 tokens in 12956ms = 38.59 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      152              38.9             38.5
+      2      197              32.8             59.8
+      4      271              20.6             71.8
+      8    13508              21.8             79.1
+Mean acceptance length: 2.59
+Per-position acceptance rate: 0.754, 0.497, 0.335, 
+done

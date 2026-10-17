@@ -1,0 +1,33 @@
+label=run18_draft_probabilistic boot=236s config=run18_draft_probabilistic.serve.sh
+Run 1: 355ms
+Run 2: 213ms
+Run 3: 159ms
+Run 4: 214ms
+Run 5: 218ms
+Run 1: 100 tokens in 2093ms = 47.77 tok/s
+Run 2: 100 tokens in 2250ms = 44.44 tok/s
+Run 3: 100 tokens in 2349ms = 42.57 tok/s
+Total: 180 tokens in 2257ms = 79.75 tok/s aggregate
+Run 1: 500 tokens in 10039ms = 49.80 tok/s
+Run 2: 500 tokens in 11036ms = 45.30 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      151              40.1             39.7
+      2      181              34.7             64.3
+      4      274              23.2             82.7
+      8      530              16.2            118.5
+Mean acceptance length: 2.53
+Per-position acceptance rate: 0.734, 0.491, 0.301, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       39              39.9             39.9
+      2       87              35.2             63.8
+      4      201              23.2             81.0
+      8      470              16.3            113.6
+Mean acceptance length: 2.47
+Per-position acceptance rate: 0.719, 0.476, 0.277, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7890    2.99           2640
+        32000          31410   11.74           2676
+steady: qwen 82978 MiB, avail 23G
+done

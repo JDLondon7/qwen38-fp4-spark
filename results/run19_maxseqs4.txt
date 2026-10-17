@@ -1,0 +1,33 @@
+label=run19_maxseqs4 boot=216s config=run19_maxseqs4.serve.sh
+Run 1: 370ms
+Run 2: 216ms
+Run 3: 213ms
+Run 4: 212ms
+Run 5: 214ms
+Run 1: 100 tokens in 2276ms = 43.93 tok/s
+Run 2: 100 tokens in 2337ms = 42.78 tok/s
+Run 3: 100 tokens in 2223ms = 44.98 tok/s
+Total: 180 tokens in 2883ms = 62.43 tok/s aggregate
+Run 1: 500 tokens in 11505ms = 43.45 tok/s
+Run 2: 500 tokens in 11949ms = 41.84 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      156              39.3             38.9
+      2      187              31.6             57.9
+      4      294              21.2             74.5
+      8    11971              22.1             82.8
+Mean acceptance length: 2.46
+Per-position acceptance rate: 0.693, 0.467, 0.299, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       43              40.8             40.8
+      2       94              37.2             69.9
+      4      213              20.4             70.6
+      8    14246              20.4             74.8
+Mean acceptance length: 2.50
+Per-position acceptance rate: 0.731, 0.473, 0.296, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7889    3.93           2007
+        32000          31409   15.15           2073
+steady: qwen 82719 MiB, avail 22G
+done

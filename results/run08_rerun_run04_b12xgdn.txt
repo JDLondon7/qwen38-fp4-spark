@@ -1,0 +1,33 @@
+label=run08_rerun_run04_b12xgdn boot=226s config=run08_rerun_run04_b12xgdn.serve.sh
+Run 1: 359ms
+Run 2: 221ms
+Run 3: 221ms
+Run 4: 221ms
+Run 5: 222ms
+Run 1: 100 tokens in 2310ms = 43.29 tok/s
+Run 2: 100 tokens in 2353ms = 42.49 tok/s
+Run 3: 100 tokens in 2166ms = 46.16 tok/s
+Total: 180 tokens in 2731ms = 65.90 tok/s aggregate
+Run 1: 500 tokens in 11312ms = 44.20 tok/s
+Run 2: 500 tokens in 13179ms = 37.93 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      154              38.8             38.4
+      2      194              32.7             61.2
+      4      282              21.2             76.0
+      8      521              14.9            102.0
+Mean acceptance length: 2.23
+Per-position acceptance rate: 0.626, 0.393, 0.215, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       46              39.4             39.4
+      2       90              35.2             64.3
+      4      213              22.6             78.0
+      8      521              15.8            112.2
+Mean acceptance length: 2.59
+Per-position acceptance rate: 0.752, 0.518, 0.321, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7889    3.13           2520
+        32000          31409   12.27           2561
+steady: qwen 83909 MiB, avail 22G
+done

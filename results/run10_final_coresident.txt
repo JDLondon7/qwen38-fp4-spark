@@ -1,0 +1,33 @@
+label=run10_final_coresident qwen_boot=216s breeze_boot=120s config=run10_final_coresident.serve.sh (co-resident)
+health: qwen 200 breeze 200
+Run 1: 352ms
+Run 2: 219ms
+Run 3: 219ms
+Run 4: 215ms
+Run 5: 214ms
+Run 1: 100 tokens in 2426ms = 41.22 tok/s
+Run 2: 100 tokens in 2226ms = 44.92 tok/s
+Run 3: 100 tokens in 2120ms = 47.16 tok/s
+Total: 180 tokens in 3316ms = 54.28 tok/s aggregate
+Run 1: 500 tokens in 11408ms = 43.82 tok/s
+Run 2: 500 tokens in 11838ms = 42.23 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      220              38.9             38.3
+      2      199              33.2             62.8
+      4      334              21.3             75.1
+      8      486              15.4            105.9
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       41              41.7             41.7
+      2       82              35.7             67.4
+      4      185              23.2             82.2
+      8      436              16.6            117.3
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7889    3.08           2564
+        32000          31406   12.06           2605
+health after: qwen 200 breeze 200
+steady: 321468, 83910 MiB 343572, 5460 MiB 348403, 3373 MiB ; avail 12G; guard: 
+qwen38-fp4 Up 12 minutes
+breeze-tts2-omni Up 8 minutes
+done

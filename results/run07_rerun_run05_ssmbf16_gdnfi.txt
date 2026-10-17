@@ -1,0 +1,33 @@
+label=run07_rerun_run05_ssmbf16_gdnfi boot=226s config=run07_rerun_run05_ssmbf16_gdnfi.serve.sh
+Run 1: 345ms
+Run 2: 214ms
+Run 3: 213ms
+Run 4: 212ms
+Run 5: 213ms
+Run 1: 100 tokens in 2393ms = 41.78 tok/s
+Run 2: 100 tokens in 2185ms = 45.76 tok/s
+Run 3: 100 tokens in 2076ms = 48.16 tok/s
+Total: 180 tokens in 2670ms = 67.41 tok/s aggregate
+Run 1: 500 tokens in 11319ms = 44.17 tok/s
+Run 2: 500 tokens in 11764ms = 42.50 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      149              39.5             39.1
+      2      181              34.3             61.1
+      4      270              21.6             79.9
+      8      484              15.6            109.8
+Mean acceptance length: 2.28
+Per-position acceptance rate: 0.653, 0.380, 0.244, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       41              40.7             40.6
+      2       88              35.9             64.7
+      4      194              23.2             80.6
+      8      456              17.0            119.7
+Mean acceptance length: 2.61
+Per-position acceptance rate: 0.756, 0.514, 0.343, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7889    2.97           2660
+        32000          31407   11.64           2697
+steady: qwen 83916 MiB, avail 22G
+done

@@ -1,0 +1,33 @@
+label=run20_kschedule_k3to2 boot=241s config=run20_kschedule_k3to2.serve.sh
+Run 1: 336ms
+Run 2: 330ms
+Run 3: 275ms
+Run 4: 327ms
+Run 5: 332ms
+Run 1: 100 tokens in 2301ms = 43.45 tok/s
+Run 2: 100 tokens in 2342ms = 42.69 tok/s
+Run 3: 100 tokens in 2244ms = 44.56 tok/s
+Total: 180 tokens in 2536ms = 70.97 tok/s aggregate
+Run 1: 500 tokens in 11527ms = 43.37 tok/s
+Run 2: 500 tokens in 11954ms = 41.82 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      199              38.8             38.3
+      2      330              32.4             58.3
+      4      328              22.2             79.2
+      8      548              15.9            113.4
+Mean acceptance length: 2.19
+Per-position acceptance rate: 0.720, 0.462, 0.111, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      207              40.2             39.7
+      2      397              36.8             66.6
+      4      443              22.9             78.9
+      8      539              17.0            122.3
+Mean acceptance length: 2.25
+Per-position acceptance rate: 0.746, 0.504, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7885    3.21           2457
+        32000          31407   12.19           2576
+steady: qwen 82813 MiB, avail 23G
+done

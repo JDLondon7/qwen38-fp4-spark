@@ -1,0 +1,33 @@
+label=run13_winner_kv4 boot=231s config=run13_winner_kv4.serve.sh
+Run 1: 349ms
+Run 2: 214ms
+Run 3: 212ms
+Run 4: 213ms
+Run 5: 214ms
+Run 1: 100 tokens in 2429ms = 41.16 tok/s
+Run 2: 100 tokens in 2219ms = 45.06 tok/s
+Run 3: 100 tokens in 2102ms = 47.57 tok/s
+Total: 180 tokens in 2682ms = 67.11 tok/s aggregate
+Run 1: 500 tokens in 11481ms = 43.55 tok/s
+Run 2: 500 tokens in 11936ms = 41.89 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      150              38.6             38.2
+      2      190              32.4             59.2
+      4      268              21.2             74.5
+      8      551              15.4            103.7
+Mean acceptance length: 2.18
+Per-position acceptance rate: 0.592, 0.375, 0.209, 
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       41              41.3             41.3
+      2       83              36.3             68.5
+      4      184              23.3             82.4
+      8      524              16.7            120.2
+Mean acceptance length: 2.58
+Per-position acceptance rate: 0.750, 0.492, 0.338, 
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7889    2.98           2647
+        32000          31408   11.69           2687
+steady: qwen 79856 MiB, avail 26G
+done

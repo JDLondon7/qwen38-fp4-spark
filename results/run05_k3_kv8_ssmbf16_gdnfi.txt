@@ -1,0 +1,22 @@
+label=run05_k3_kv8_ssmbf16_gdnfi boot=241s config=run05_k3_kv8_ssmbf16_gdnfi.serve.sh
+Run 1: 345ms
+Run 2: 213ms
+Run 3: 208ms
+Run 4: 210ms
+Run 5: 210ms
+Run 1: 100 tokens in 2276ms = 43.93 tok/s
+Run 2: 100 tokens in 2188ms = 45.70 tok/s
+Run 3: 89 tokens in 1914ms = 46.49 tok/s
+Total: 180 tokens in 2450ms = 73.46 tok/s aggregate
+Run 1: 500 tokens in 11282ms = 44.31 tok/s
+Run 2: 500 tokens in 11716ms = 42.67 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      159              41.3             40.9
+      2      192              33.4             60.4
+      4      272              22.2             77.2
+      8      484              15.3            108.3
+Mean acceptance length: 2.33
+Per-position acceptance rate: 0.692, 0.414, 0.229, 
+steady: qwen 83356 MiB, avail 23G
+done

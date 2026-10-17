@@ -1,0 +1,36 @@
+label=run21_final_coresident_probdraft qwen_boot=226s breeze_boot=120s min_avail_during_boots=5.0G config=run21_final_coresident_probdraft.serve.sh (co-resident, port 8400)
+GPU KV cache size: 440,070 tokens, Maximum concurrency for 262,144 tokens per request: 1.68x
+health: qwen 200 breeze 200
+max_model_len: 262144
+Run 1: 358ms
+Run 2: 224ms
+Run 3: 218ms
+Run 4: 214ms
+Run 5: 217ms
+Run 1: 100 tokens in 2112ms = 47.34 tok/s
+Run 2: 100 tokens in 2281ms = 43.84 tok/s
+Run 3: 100 tokens in 2355ms = 42.46 tok/s
+Total: 180 tokens in 2774ms = 64.88 tok/s aggregate
+Run 1: 500 tokens in 10081ms = 49.59 tok/s
+Run 2: 500 tokens in 11021ms = 45.36 tok/s
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, sampled
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1      210              43.2             42.6
+      2      206              34.6             64.7
+      4      282              23.0             82.0
+      8      517              16.2            116.8
+model nvidia/Qwen3.8-Flash-Next-FP4-Local, 512 tokens/stream, 2 repeats, greedy
+streams  ttft_ms  per_stream_tok/s  aggregate_tok/s
+      1       42              40.4             40.4
+      2       85              35.5             64.5
+      4      183              23.0             80.9
+      8      441              16.3            114.4
+target_tokens  prompt_tokens  ttft_s  prefill_tok/s
+         8000           7890    3.15           2503
+        32000          31409   12.15           2585
+       128000         125488   49.76           2522
+health after: qwen 200 breeze 200
+steady: 949146, 82980 MiB 961331, 5460 MiB 965187, 3373 MiB ; avail 13G; guard: 
+qwen38-fp4 Up 13 minutes
+breeze-tts2-omni Up 9 minutes
+done
